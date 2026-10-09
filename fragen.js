@@ -1,4 +1,4 @@
-﻿// Fragevorlage:
+// Fragevorlage:
 // {
 //     category: "Toleranzen",
 //     level: "N",
@@ -93,7 +93,7 @@ const questions_data = [
     {
         category: "Drehen",
         level: "N",
-        frage: "Mit welchen Vorrichtungen können lange Werkstücke auf der Drehmaschine agestützt werden?",
+        frage: "Mit welchen Vorrichtungen können lange Werkstücke auf der Drehmaschine abgestützt werden?",
         fragebild: [],
         fragebild_2: [],
         antwort: "- Reitstock,\n- Lünette.",
@@ -354,7 +354,7 @@ const questions_data = [
     {
         category: "Schleifen",
         level: "V",
-        frage: "Auf einem Schleibock ist eine **weiße** und **grüne** Schleifscheibe montiert.\nWelche Schleifkornart wird das jeweils sein?",
+        frage: "Auf einem Schleifbock ist eine **weiße** und **grüne** Schleifscheibe montiert.\nWelche Schleifkornart wird das jeweils sein?",
         fragebild: [],
         fragebild_2: [],
         antwort: "Die weiße Schleifscheibe ist aus Korund, die grüne Schleifscheibe aus Siliziumkarbid.",
@@ -371,7 +371,7 @@ const questions_data = [
     {
         category: "Schleifen",
         level: "N",
-        frage: "Was versteht man unter der **Härte** von Schleifscheibe?",
+        frage: "Was versteht man unter der **Härte** einer Schleifscheibe?",
         fragebild: [],
         fragebild_2: [],
         antwort: "Die Härte einer Schleifscheibe beschreibt den Widerstand der Bindung gegen das Ausbrechen der Schleifkörner.",
