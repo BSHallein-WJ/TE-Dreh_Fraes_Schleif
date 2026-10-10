@@ -42,6 +42,12 @@
         <div class="menu-dropdown" id="menu-dropdown">
             <button type="button" onclick="goToStart()">Startseite</button>
             <button type="button" onclick="toggleDarkMode()" id="dark-mode-button">Darkmode</button>
+            <label class="menu-switch">
+                <span>Antworten immer anzeigen</span>
+                <input type="checkbox" id="always-show-answers-toggle" onchange="setAlwaysShowAnswers(this.checked)"
+                    aria-label="Antworten immer anzeigen">
+                <span class="switch-slider" aria-hidden="true"></span>
+            </label>
             <button type="button" onclick="setQuestionOrder('mixed')">Fragen gemischt stellen</button>
             <button type="button" onclick="setQuestionOrder('sequential')">Fragen der Reihe nach</button>
             <button type="button" onclick="closeApp()">App schließen</button>
@@ -49,10 +55,6 @@
 
         <div class="content-area">
             <div class="start-screen" id="start-screen">
-                <div class="start-intro">
-                    <h2>Teste und festige dein Wissen!</h2>
-                    <p>Wähle ein Fertigungsverfahren.</p>
-                </div>
                 <img src="Titelbild.png" alt="Drehen, Fräsen und Schleifen" class="start-image">
                 <div class="category-buttons" id="category-buttons"></div>
                 <div class="legal-links">

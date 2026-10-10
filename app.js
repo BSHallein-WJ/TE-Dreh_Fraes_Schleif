@@ -4,6 +4,7 @@ let questions = [];
 let currentIndex = 0;
 let quizActive = false;
 let questionOrder = "sequential";
+let alwaysShowAnswers = localStorage.getItem("alwaysShowAnswers") === "true";
 let selectedCategory = originalQuestions[0] && originalQuestions[0].category || "";
 const lastStartedQuestionByCategory = {};
 
@@ -26,6 +27,7 @@ const solutionAnswerEl = document.getElementById("solution-answer");
 const solutionImagesEl = document.getElementById("solution-images");
 const btnPrev = document.getElementById("btn-prev");
 const btnNext = document.getElementById("btn-next");
+const alwaysShowAnswersToggle = document.getElementById("always-show-answers-toggle");
 
 const imageViewer = document.getElementById("image-viewer");
 const viewerImage = document.getElementById("viewer-image");
@@ -47,6 +49,7 @@ if (savedDarkMode) {
 }
 
 updateOrderToggleButton();
+alwaysShowAnswersToggle.checked = alwaysShowAnswers;
 
 function renderImages(container, imgList) {
     if (imgList && imgList.length > 0) {
@@ -191,7 +194,7 @@ function loadQuestion() {
         ...(q.beispiel_bild_2 || [])
     ]);
 
-    solutionBox.style.display = "none";
+    solutionBox.style.display = alwaysShowAnswers ? "block" : "none";
     progressEl.innerText = `Frage ${currentIndex + 1} von ${questions.length}`;
     progressBarFill.style.width = `${((currentIndex + 1) / questions.length) * 100}%`;
 
@@ -203,7 +206,16 @@ function loadQuestion() {
 
 function toggleSolution() {
     if (!quizActive) return;
+    if (alwaysShowAnswers) return;
     solutionBox.style.display = (solutionBox.style.display === "block") ? "none" : "block";
+}
+
+function setAlwaysShowAnswers(enabled) {
+    alwaysShowAnswers = enabled;
+    localStorage.setItem("alwaysShowAnswers", enabled);
+    if (quizActive) {
+        solutionBox.style.display = enabled ? "block" : "none";
+    }
 }
 
 function nextQuestion() {
