@@ -9,6 +9,7 @@ const lastStartedQuestionByCategory = {};
 
 const startScreen = document.getElementById("start-screen");
 const categoryTitle = document.getElementById("category-title");
+const zentraleButton = document.getElementById("zentrale-button");
 const quizScreen = document.getElementById("quiz-screen");
 const footerButtons = document.getElementById("footer-buttons");
 const progressEl = document.getElementById("progress");
@@ -88,6 +89,8 @@ function shuffleQuestions(array) {
 function startQuiz(category) {
     selectedCategory = category;
     categoryTitle.innerText = category;
+    categoryTitle.style.display = "";
+    zentraleButton.style.display = "none";
     const categorizedQuestions = originalQuestions.filter(question => question.category === selectedCategory);
     questions = questionOrder === "mixed" ? shuffleQuestions(categorizedQuestions) : [...categorizedQuestions];
 
@@ -224,7 +227,9 @@ function prevQuestion() {
 
 function goToStart() {
     quizActive = false;
-    categoryTitle.innerText = "Drehen, Fräsen und Schleifen";
+    categoryTitle.innerText = "";
+    categoryTitle.style.display = "none";
+    zentraleButton.style.display = "";
     startScreen.style.display = "flex";
     quizScreen.style.display = "none";
     footerButtons.style.display = "none";
@@ -247,15 +252,6 @@ function toggleDarkMode() {
 function toggleMenu() {
     const dropdown = document.getElementById("menu-dropdown");
     dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
-}
-
-function openLegalModal() {
-    document.getElementById("legal-modal").style.display = "block";
-    document.getElementById("menu-dropdown").style.display = "none";
-}
-
-function closeLegalModal() {
-    document.getElementById("legal-modal").style.display = "none";
 }
 
 window.onclick = function (event) {
