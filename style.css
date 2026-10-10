@@ -85,11 +85,13 @@ body {
     display: flex;
     justify-content: center;
     gap: 20px;
-    padding: 6px 12px;
-    flex-shrink: 0;
+    width: min(100%, 280px);
+    margin-top: 28px;
+    padding: 12px;
     font-size: 0.75rem;
     background-color: #fafdff;
-    border-top: 1px solid var(--line-color);
+    border: 1px solid var(--line-color);
+    border-radius: 5px;
 }
 
 .legal-links a {
@@ -592,6 +594,10 @@ button {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+
+    .btn-zentrale {
+        justify-self: start;
     }
 
     .btn-burger {
