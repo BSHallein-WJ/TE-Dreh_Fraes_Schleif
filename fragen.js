@@ -1,4 +1,4 @@
-// Fragevorlage:
+﻿// Fragevorlage:
 // {
 //     category: "Toleranzen",
 //     level: "N",
